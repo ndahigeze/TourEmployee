@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="1341.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UIControl.HandleRequestController">
+   <children>
+      <BorderPane layoutY="-4.0" prefHeight="786.0" prefWidth="1144.0" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-4.0">
+         <bottom>
+            <SplitPane dividerPositions="0.4912434325744308" prefHeight="338.0" prefWidth="1144.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <BorderPane layoutX="171.0" layoutY="35.0" prefHeight="257.0" prefWidth="557.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <bottom>
+                              <Pane prefHeight="19.0" prefWidth="557.0" BorderPane.alignment="CENTER" />
+                           </bottom>
+                           <top>
+                              <Pane prefHeight="39.0" prefWidth="557.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <JFXButton fx:id="refreshTripBTN" buttonType="RAISED" onAction="#refreshTrip" prefHeight="40.0" prefWidth="165.0" ripplerFill="#464d83" style="-fx-background-color: #4285F4;" text="Refresh" />
+                                    <Label fx:id="labelNofound" layoutX="165.0" layoutY="4.0" prefHeight="31.0" prefWidth="487.0" />
+                                    <Label layoutX="165.0" layoutY="4.0" prefHeight="31.0" prefWidth="487.0" text="List Of requested Trip Created" />
+                                 </children>
+                              </Pane>
+                           </top>
+                           <center>
+                              <TableView fx:id="requestView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                <columns>
+                                  <TableColumn fx:id="clientCol" prefWidth="75.0" text="Client Name" />
+                                  <TableColumn fx:id="dateRequested" prefWidth="75.0" text="Date of Trip" />
+                                    <TableColumn fx:id="locationCol" prefWidth="75.0" text="Location " />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TableView fx:id="guideTable" layoutX="75.0" layoutY="39.0" prefHeight="200.0" prefWidth="577.0" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="39.0">
+                          <columns>
+                            <TableColumn fx:id="guideCodeCol" prefWidth="75.0" text="Guide code" />
+                            <TableColumn fx:id="nameCol" prefWidth="75.0" text="FisrtName" />
+                              <TableColumn fx:id="lnameCol" prefWidth="75.0" text="LastName" />
+                              <TableColumn fx:id="dateCol" prefWidth="75.0" text="Assigned Date" />
+                              <TableColumn fx:id="AlocationCol" prefWidth="75.0" text="Assigned Location" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <JFXButton fx:id="refreshDriverBTN" buttonType="RAISED" onAction="#refreshDriver" prefHeight="40.0" prefWidth="165.0" style="-fx-background-color: #4285F4;" text="Refresh" />
+                        <Label layoutX="165.0" layoutY="4.0" prefHeight="34.0" prefWidth="297.0" text="List of Guide Assigned to Trip" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </bottom>
+         <left>
+            <AnchorPane prefHeight="448.0" prefWidth="303.0" style="-fx-background-color: Silver;" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane layoutX="-13.0" layoutY="81.0" prefHeight="519.0" prefWidth="373.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <Label prefHeight="46.0" prefWidth="303.0" text="         Mark Trip That Are Done" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </top>
+                     <bottom>
+                        <AnchorPane prefHeight="219.0" prefWidth="303.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane layoutX="14.0" layoutY="55.0" prefHeight="200.0" prefWidth="303.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="151.0" minHeight="0.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <JFXButton fx:id="searchBTN" buttonType="RAISED" onAction="#searchTrip" prefHeight="44.0" prefWidth="318.0" style="-fx-background-color: #0099CC;" text="Search Requested Trip  " textFill="WHITE" GridPane.rowIndex="3" />
+                                    <Label prefHeight="34.0" prefWidth="302.0" text="                     Search Location" />
+                                    <JFXComboBox fx:id="locationTf" labelFloat="true" prefHeight="31.0" prefWidth="335.0" promptText="Trip Location" GridPane.rowIndex="1" />
+                                    <JFXDatePicker fx:id="dateTf" prefHeight="31.0" prefWidth="347.0" promptText="Trip Date" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </bottom>
+                     <center>
+                        <GridPane prefHeight="370.0" prefWidth="303.0" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="61.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="409.0" minWidth="10.0" prefWidth="395.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="106.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="106.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="103.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXComboBox fx:id="slTf" labelFloat="true" prefHeight="31.0" prefWidth="335.0" promptText="Trip Location" GridPane.columnIndex="1" />
+                              <JFXDatePicker fx:id="sdTf" prefHeight="31.0" prefWidth="347.0" promptText="Trip Date" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXButton fx:id="markBTN" buttonType="RAISED" onAction="#markTheDone" prefHeight="44.0" prefWidth="318.0" style="-fx-background-color: #0099CC;" text=" Mark" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="confMSG" prefHeight="42.0" prefWidth="710.0" text="  " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <right>
+            <AnchorPane prefHeight="519.0" prefWidth="326.0" style="-fx-background-color: silver;" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane layoutY="200.0" prefHeight="506.0" prefWidth="326.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="353.0" minWidth="10.0" prefWidth="301.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="1.0" prefWidth="25.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="178.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="178.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="178.0" minHeight="0.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="178.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="369.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="369.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="143.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <JFXButton fx:id="asingnBTN" buttonType="RAISED" onAction="#asignDriver" prefHeight="44.0" prefWidth="353.0" style="-fx-background-color: #0099CC;" text="Assign Driver " textFill="WHITE" GridPane.rowIndex="4" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0099CC;">
+                           <children>
+                              <Label fx:id="searchedTripCodelabel" layoutX="14.0" layoutY="9.0" prefHeight="53.0" prefWidth="305.0" text="  Assign Driver To Location And Date" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                        <JFXDatePicker fx:id="adTf" prefHeight="46.0" prefWidth="325.0" promptText="Trip Date" GridPane.rowIndex="1" />
+                        <JFXComboBox fx:id="atTf" labelFloat="true" prefHeight="45.0" prefWidth="325.0" promptText="Trip Location" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="gcTf" labelFloat="true" prefHeight="41.0" prefWidth="325.0" promptText="Guider Code" GridPane.rowIndex="3" />
+                        <GridPane prefHeight="144.0" prefWidth="301.0" GridPane.rowIndex="6">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXButton fx:id="searchGuider" buttonType="RAISED" onAction="#searchGuider" prefHeight="46.0" prefWidth="320.0" style="-fx-background-color: #4285F4;" text="Search Guide Not Assigned To Given Date" GridPane.rowIndex="1" />
+                              <JFXDatePicker fx:id="ddatePicker" prefHeight="31.0" prefWidth="323.0" />
+                           </children>
+                        </GridPane>
+                        <Label fx:id="confLabel" prefHeight="52.0" prefWidth="299.0" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </right>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <AnchorPane prefHeight="74.0" prefWidth="592.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <GridPane layoutX="31.0" layoutY="6.0" prefHeight="74.0" prefWidth="712.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="35.0" prefWidth="338.0" style="-fx-background-color: Silver;" text="List Of Trip Done" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+               </top>
+               <bottom>
+                  <AnchorPane prefHeight="101.0" prefWidth="712.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXButton fx:id="serchAsiggnedBTN" buttonType="RAISED" layoutX="6.0" layoutY="73.0" onAction="#serchAsiggned" prefHeight="46.0" prefWidth="258.0" style="-fx-background-color: #4285F4;" text="Search Guide Assigned To a Date" />
+                        <JFXDatePicker fx:id="dtAsigned" layoutX="264.0" layoutY="73.0" prefHeight="43.0" prefWidth="314.0" promptText="Date" style="-fx-background-color: silver;" />
+                        <Label fx:id="nFound" layoutX="578.0" layoutY="73.0" prefHeight="42.0" prefWidth="132.0" />
+                     </children></AnchorPane>
+               </bottom>
+               <right>
+                  <AnchorPane prefHeight="331.0" prefWidth="19.0" BorderPane.alignment="CENTER" />
+               </right>
+               <left>
+                  <AnchorPane prefHeight="331.0" prefWidth="41.0" BorderPane.alignment="CENTER" />
+               </left>
+               <center>
+                  <TableView fx:id="tripMadeList" prefHeight="368.0" prefWidth="652.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="clientNameCol" prefWidth="75.0" text="Client Name" />
+                      <TableColumn fx:id="locationDoneCCol" prefWidth="75.0" text="Location" />
+                        <TableColumn fx:id="dateTripCol" prefWidth="75.0" text="Date Trip Done" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

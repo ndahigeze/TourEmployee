@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="863.0" prefWidth="1681.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UIControl.EmployeeMainUIController">
+   <children>
+      <BorderPane layoutX="207.0" layoutY="60.0" prefHeight="836.0" prefWidth="1180.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane layoutX="294.0" layoutY="332.0" prefHeight="863.0" prefWidth="1244.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <Pane prefHeight="44.0" prefWidth="1244.0" style="-fx-background-color: #33b5e5;" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="logoutBTN" layoutY="-1.0" onAction="#logout" prefHeight="46.0" prefWidth="129.0" style="-fx-background-color: #0099CC;" text="Logout" textFill="WHITE" />
+                              <Label fx:id="username" layoutX="743.0" layoutY="4.0" prefHeight="35.0" prefWidth="494.0" />
+                              <Label fx:id="requestAlert" layoutX="129.0" layoutY="4.0" prefHeight="40.0" prefWidth="491.0" />
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <AnchorPane fx:id="rootPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <BorderPane layoutX="113.0" layoutY="102.0" prefHeight="819.0" prefWidth="1244.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <left>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #33b5e5;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <JFXButton fx:id="createTripBTN" layoutY="14.0" onAction="#createTripAndService" prefHeight="53.0" prefWidth="199.0" style="-fx-background-color: #0099CC;" text="Create Trip And Service" textFill="WHITE" />
+                                          <JFXButton fx:id="handleRequestBTN" layoutX="1.0" layoutY="87.0" onAction="#handleRequest" prefHeight="53.0" prefWidth="199.0" style="-fx-background-color: #0099CC;" text="Handle Request" textFill="WHITE" />
+                                       </children>
+                                    </Pane>
+                                 </left>
+                                 <center>
+                                    <AnchorPane fx:id="rootPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
